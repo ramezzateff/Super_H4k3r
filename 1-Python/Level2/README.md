@@ -1,4 +1,4 @@
-🔥 Level 2: Control Flow & Loops
+# Level 2: Control Flow & Loops
 
 Welcome to Level 2 of our Python coding exercises! In this level, we will cover essential control flow structures, including conditional statements and loops.
 
