@@ -10,7 +10,7 @@ file_path = os.path.join(current_dir, 'task5.txt')
 
 # create and write to the file
 with open(file_path, 'w') as file_write:
-    file_write.write('Hello!\n')
+    file_write.write('Hello! Hacker.\n')
 # file_write_close() == with function
 
 # read from the file

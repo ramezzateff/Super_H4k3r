@@ -13,7 +13,7 @@ def longest_word(words):
 
 word_list = ["apple", "banana", "cherry", "blueberry", "kiwi", "pear"]
 longest = longest_word(word_list)
-
+print(word_list)
 if longest:
     print(f"The longest word is: {longest}")
 else:

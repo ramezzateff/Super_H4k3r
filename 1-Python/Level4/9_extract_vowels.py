@@ -3,6 +3,6 @@
 # (“aeiouAEIOU”) from a given string.
 from utils import extract_vowels
 
-print(extract_vowels("cybersecurity"))
+print("cybersecurity extract vowels: " + extract_vowels("cybersecurity"))
 
 # output: eeuui

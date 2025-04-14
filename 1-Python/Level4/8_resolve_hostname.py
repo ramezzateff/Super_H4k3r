@@ -3,5 +3,5 @@
 # resolves it to an IP address.
 from utils import resolve_hostname
 
-print(resolve_hostname("facebook.com"))
+print("facbook.com DNS: " + resolve_hostname("facebook.com"))
 # output : 142.250.183.110

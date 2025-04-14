@@ -6,7 +6,7 @@ password = 'test'
 count = 0
 while (count < 3):
     username = input('Enter username: ')
-    password = input('Enter password3')
+    password = input('Enter password: ')
 
     if username == 'ramez@gmail.com' and password == 'test':
         print('Access granted')

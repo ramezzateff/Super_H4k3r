@@ -16,6 +16,6 @@ port_dict = {
     23: 'Telnet',
 }
 ask_user_Port = int(input('What port Number to get their services: '))
-service = port_dict.get(ask_user_port)
+service = port_dict.get(ask_user_Port)
 
-print(f'Port {ask_user_port}: {service}')
+print(f'Port {ask_user_Port}: {service}')
