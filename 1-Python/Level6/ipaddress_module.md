@@ -76,11 +76,12 @@ for subnet in large_net.subnets(prefixlen_diff=8):
 Compatibility: Converts to/from strings (`str(ipaddress.IPv4Address('192.168.1.1'))`).
 
 ## 6. Related Domains
-Field           How ipaddress Helps
-Cybersecurity:   Identify IP ranges, automate private/public classification.
-Networking:      Manage subnets, route calculations, broadcast/network addressing.
-Automation:      Build tools for IP validation, bulk filtering, CIDR calculations.
-Cloud/DevOps:    Handle IP blocks and access control in cloud configurations.
+|Field          | How ipaddress Helps|
+|---------------|--------------------|
+|Cybersecurity:   |Identify IP ranges, automate private/public classification.|
+|Networking:      |Manage subnets, route calculations, broadcast/network addressing.|
+|Automation:      |Build tools for IP validation, bulk filtering, CIDR calculations.|
+|Cloud/DevOps:    |Handle IP blocks and access control in cloud configurations.|
 
 ## ✅ Summary
 The `ipaddress` module is a powerful and built-in tool to work with IPs and networks in Python. Whether you're writing a scanner, subnetting tool, or validating input — it's a must-know for network-aware scripts. """
