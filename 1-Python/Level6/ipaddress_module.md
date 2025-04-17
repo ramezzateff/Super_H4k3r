@@ -53,7 +53,7 @@ for subnet in large_net.subnets(prefixlen_diff=8):
     print(subnet)
     if subnet.prefixlen == 24:  # Stop after 5 examples
         break
-
+```
 
 Is 10.5.2.99 private? True
 Usable IPs in network:
@@ -67,7 +67,7 @@ First 5 /24 subnets:
 192.168.1.0/24
 ...
 192.168.4.0/24
-```
+
 
 ## 5. Practical Notes
 Validation: Use `strict=True` (default) to reject host bits in networks (e.g., `192.168.1.1/24` raises an error).
