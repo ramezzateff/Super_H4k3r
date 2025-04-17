@@ -53,7 +53,8 @@ for subnet in large_net.subnets(prefixlen_diff=8):
     print(subnet)
     if subnet.prefixlen == 24:  # Stop after 5 examples
         break
-        ```
+```
+
 Is 10.5.2.99 private? True
 Usable IPs in network:
 203.0.113.1
