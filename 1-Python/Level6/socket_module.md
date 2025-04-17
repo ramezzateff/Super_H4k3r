@@ -38,7 +38,6 @@ The `socket` module in Python provides low-level access to network communication
 
 ## 4. 💡 Mini Code Example
 ### 🖥 Server (server.py)
-
 ```python
 import socket
 
@@ -59,7 +58,6 @@ server.close()
 🧑 Client (client.py)
 ```
 ### 🧑 Client (client.py)
-
 python
 ```python
 
@@ -77,17 +75,19 @@ client.close()
 ```
 
 ## 5. 🛠 Practical Notes
-Always encode strings before sending and decode after receiving `(.encode() / .decode()).`
+- Always `.encode()` strings before sending and `.decode()` after receiving. 
 
-`recv(1024)` reads up to 1024 bytes — adjust buffer size based on expected data.
+- `recv(1024)` reads up to 1024 bytes — adjust buffer size based on expected data.
 
-`settimeout(seconds)` is useful to prevent your code from hanging forever.
+- Use `.settimeout(seconds)` to avoid your code hanging forever.
 
-For UDP, use `SOCK_DGRAM` and use `sendto() / recvfrom()` instead of `send() / recv().`
+- For UDP, use `SOCK_DGRAM` and use `sendto() / recvfrom()` instead of `send() / recv().`
 
-Be careful when using sockets over the internet. Avoid scanning or connecting to machines you don’t own or don’t have permission to test.
+- Be careful when using sockets over the internet. Avoid scanning or connecting to machines you don’t own or don’t have permission to test.
 
-Use `try/except` blocks to handle exceptions like `ConnectionRefusedError`, `socket.timeout`, etc.
+- Use `try/except` blocks to handle exceptions like `ConnectionRefusedError`, `socket.timeout`, etc.
+
+---
 
 ## 6. 🔐 Related Domains
 Field	How socket Helps
@@ -97,3 +97,7 @@ Field	How socket Helps
 | Automation    | Create socket-based tools that communicate over a network.               |
 | Networking    | Understand how TCP/UDP protocols work hands-on.                          |
 | DevOps        | Build custom internal tools to monitor services or handle network comms. |
+| Web Dev       | Run Flask/Django apps on custom ports. |
+
+## ✅ Summary
+Understanding sockets and ports in Python is essential if you're working in networking, security, automation, or backend development. They’re the foundation of how devices talk to each other — and Python makes it accessible for all levels.
