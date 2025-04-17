@@ -19,14 +19,18 @@ The `ipaddress` module provides tools for creating, manipulating, and operating 
 
 ## 3. Core Functions/Classes  
 
-| Method/Property       | Description                                                                 |
-|-----------------------|----------------------------------------------------------------------------|
+| Function / Class | Description |
+|------------------|-------------|
 | `ip_address()`        | Creates an `IPv4Address` or `IPv6Address` object (e.g., `192.168.1.1`).    |
-| `ip_network()`        | Defines a network (e.g., `"10.0.0.0/8"`). Supports `strict=False` for host bits. |
-| `hosts()`             | Generator for usable IPs in a network (skips network/broadcast addresses).  |
+| `ip_network()`        | Create and manipulate an IP network/subnet (e.g., `"10.0.0.0/8"`). Supports `strict=False` for host bits. |
+| `ipaddress.ip_interface()` | Represents a host IP address with its network info. |
 | `subnets()`           | Divides a network into smaller subnets (prefixlen_diff=N).                  |
 | `is_private`          | `True` if IP is in RFC 1918 ranges (e.g., `172.16.0.0/12`).               |
+| `.is_global` | Returns `True` if IP is publicly routable. |
+| `.hosts()` | Lists all usable host IPs in a network. |
 | `is_loopback`         | Checks for `127.0.0.0/8` (IPv4) or `::1` (IPv6).                          |
+| `.supernet()` / `.subnets()` | Increase/decrease subnet size. |
+| `in` operator | Check if an IP is part of a subnet (`ip in network`). |
 | `with_netmask`        | Returns IP + netmask (e.g., `"192.168.1.1/255.255.255.0"`).               |
 
 ---
@@ -45,38 +49,38 @@ network = ipaddress.ip_network("203.0.113.0/29")
 print("Usable IPs in network:")
 for host in network.hosts():
     print(host)
+    # 203.0.113.1
+    # 203.0.113.2
+
 
 # Subnet splitting
 large_net = ipaddress.ip_network("192.168.0.0/16")
-print("\nFirst 5 /24 subnets:")
+print("\nFirst 5 /24 subnets:") # Output: 203.0.113.6
 for subnet in large_net.subnets(prefixlen_diff=8):
     print(subnet)
     if subnet.prefixlen == 24:  # Stop after 5 examples
+        First 5 /24 subnets:
+        # 192.168.0.0/24
+        # 192.168.1.0/24
+        # 192.168.2.0/24
+        # 192.168.3.0/24
+        # 192.168.4.0/24
         break
 ```
 
-Is 10.5.2.99 private? True
-Usable IPs in network:
-203.0.113.1
-203.0.113.2
-...
-203.0.113.6
-
-First 5 /24 subnets:
-192.168.0.0/24
-192.168.1.0/24
-...
-192.168.4.0/24
-
 
 ## 5. Practical Notes
-Validation: Use `strict=True` (default) to reject host bits in networks (e.g., `192.168.1.1/24` raises an error).
-Memory Efficiency: `hosts()` returns a generator—convert to `list()` if reuse is needed.
-IPv6 Support: Works transparently (e.g., `ip_address("2001:db8::1")`).
+- Validation: Use `strict=True` (default) to reject host bits in networks (e.g., `192.168.1.1/24` raises an error).
+- Memory Efficiency: `hosts()` returns a generator—convert to `list()` if reuse is needed.
+- IPv6 Support: Works transparently (e.g., `ip_address("2001:db8::1")`).
 Compatibility: Converts to/from strings (`str(ipaddress.IPv4Address('192.168.1.1'))`).
 
 ## 6. Related Domains
-Cybersecurity: Scan for rogue IPs in logs (`if ip in blacklisted_network`).
-Data Engineering: Aggregate IPs by subnet in PySpark/pandas.
-Automation: Bulk-update firewall rules (AWS Security Groups, iptables).
-IoT: Validate device IPs before granting network access.
+Field           How ipaddress Helps
+Cybersecurity:   Identify IP ranges, automate private/public classification.
+Networking:      Manage subnets, route calculations, broadcast/network addressing.
+Automation:      Build tools for IP validation, bulk filtering, CIDR calculations.
+Cloud/DevOps:    Handle IP blocks and access control in cloud configurations.
+
+## ✅ Summary
+The `ipaddress` module is a powerful and built-in tool to work with IPs and networks in Python. Whether you're writing a scanner, subnetting tool, or validating input — it's a must-know for network-aware scripts. """
