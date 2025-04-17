@@ -73,7 +73,6 @@ print("Response:", response.text)
 ---
 
   
-
 ## 5. 🛠 Practical Notes
 
 - Always use `.json()` if you're expecting JSON data — it parses it into a dictionary.

@@ -2,6 +2,7 @@
 
 The `socket` module in Python provides low-level access to network communications. It lets you create **clients and servers** that send and receive **data over a network** using **TCP/IP** or **UDP**.
 
+
 ---
 
 ## 2. 🌍 Real-world Use Cases
@@ -25,6 +26,8 @@ The `socket` module in Python provides low-level access to network communication
 | `AF_INET6` | Use IPv6 addresses. |
 | `SOCK_STREAM` | Use TCP (connection-oriented). |
 | `SOCK_DGRAM` | Use UDP (connectionless). |
+| `gethostname()` | Return the name of local host. |
+| `gethostbyname(hostname)` | Returns ip address |
 | `bind((host, port))` | Server: Attach socket to a host and port. |
 | `listen()` | Server: Start listening for incoming connections. |
 | `accept()` | Server: Accept a connection from a client. |
