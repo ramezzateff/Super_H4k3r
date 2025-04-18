@@ -8,31 +8,29 @@ def check_web(hostname):
     if hostname.startswith(('http://', 'https://')):
         hostname = hostname.split('//')[-1]
 
-    # Check if the domain name resolves to an active IP
+    # Dns Resolution
     try:
         socket.gethostbyname(hostname)
     except socket.gaierror as e:
-        print(f"!!! Temporary failure in name resolution for {hostname} !!!")
+        print(f"!!! DNS resolution failed for {hostname} !!!")
         return  # Exit if DNS resolution fails
 
-    # Try connecting to https:// first
-    try:
-        req = requests.get('https://' + hostname)  # Trying to connect with https
-        print(f"{hostname} is working on https!")
-    except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
-        # If https fails, try connecting with http
+    # Try https first
+    for protocol in ['https://', 'http://']:
         try:
-            req = requests.get('http://' + hostname)  # Trying to connect with http
-            print(f"{hostname} is working on http!")
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
-            print(f"{hostname} did not work")
-            return  # Exit if both connections fail
+            url = protocol + hostname
+            req = requests.get(url, timeout=5)
+            if 200 <= req.status_code < 400:
+                print(f"{hostname} is online via {protocol.split('://')[0]} (status: {req.status_code})")
+                return
+            else:
+                print(f"{hostname} responded with status code {req.status_code} via {protocol}")
+                return
+        except (requests.exceptions.RequestException) as e:
+            continue
 
-    # If the status code is between 200 and 400, the website is working
-    if (200 <= req.status_code < 400):
-        print(f"{hostname} is working !!!")
-    else:
-        print(f"{hostname} did not work")
+    print(f"{hostname} is down or unreachable via both https and http")
+
 
 if __name__ == "__main__":
     hostname = input("Enter the website name to check if it's working: ")
