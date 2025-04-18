@@ -23,14 +23,13 @@ It’s used to **spawn new processes**, **connect to their input/output/error pi
 |----------|-------------|
 | `subprocess.run()` | Most common. Runs a command and waits for it to complete. |
 | `subprocess.Popen()` | More advanced. Gives more control over input/output streams. |
-| `subprocess.call()` | Legacy. Similar to `run`, returns exit code. |
-| `subprocess.check_output()` | Runs a command and returns its output (stdout) as bytes. |
+| `subprocess.call()` | Legacy. Similar to `run`, canot save the output of the command like `.run()`, returns exit code. |
+| `subprocess.check_output()` | Runs a command and returns its output (stdout) as bytes, when u add `text=True` it decode this bytes. |
 | `shell=True` | Allows using shell features like pipes (|), redirection (>, <), Dont use it when taking an input from user!. |
 | `capture_output=True` | That save the output and can use it later with `.stderr/.stdout` |
 | `text=True` | Makes output returned as string instead of bytes (like `.decode()`). |
 | `stdout`, `stderr` | Capture standard output/error streams from a command. |
 | `result.returncodde` | if it not equal zero then the command have an error |
-
 
 ---
 
