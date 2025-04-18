@@ -39,7 +39,7 @@ It’s used to **spawn new processes**, **connect to their input/output/error pi
 import subprocess
 
 result = subprocess.run(["echo", "Hello from subprocess!"], capture_output=True, text=True)
-print(result.stdout)
+print(result.stdout) # output: Hello from subprocess!
 ```
 
 ---
@@ -63,8 +63,8 @@ print(result.stdout)
 ```python
 import subprocess
 
-result = subprocess.run("ls -l | grep .py", shell=True, capture_output=True, text=True)
-print(result.stdout)
+result = subprocess.run("ls -lah | grep .py", shell=True, capture_output=True, text=True)
+print(result.stdout)  # output: list all the files in your folder
 ```
 
 ---
