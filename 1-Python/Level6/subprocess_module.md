@@ -25,7 +25,7 @@ It’s used to **spawn new processes**, **connect to their input/output/error pi
 | `subprocess.Popen()` | More advanced. Gives more control over input/output streams. |
 | `subprocess.call()` | Legacy. Similar to `run`, returns exit code. |
 | `subprocess.check_output()` | Runs a command and returns its output (stdout) as bytes. |
-| `shell=True` | Allows using shell features like pipes (`|`), redirection (`>`, `<`). |
+| `shell=True` | Allows using shell features like pipes (|), redirection (>, <). |
 | `stdout`, `stderr` | Capture standard output/error streams from a command. |
 | `text=True` | Makes output returned as string instead of bytes (like `.decode()`).
 
