@@ -34,9 +34,9 @@ class SubdomainScanner(Scanner):
         print(f"[*] Brute-forcing subdomains on {self.target}")
         # Simulated brute force
         self.results = ["mail.example.com", "dev.example.com"]
+```
 
-
-# Example usage
+## Example usage
 if __name__ == "__main__":
     port_scan = PortScanner("192.168.1.1")
     port_scan.scan()
@@ -45,42 +45,48 @@ if __name__ == "__main__":
     sub_scan = SubdomainScanner("example.com")
     sub_scan.scan()
     sub_scan.report()
-📘 Concept Explanation
-What is Inheritance?
+## 📘 Concept Explanation
+
+### What is Inheritance?
 Inheritance allows one class (child) to reuse and extend the code from another class (parent).
 
-Scanner is the base class (parent).
+- `Scanner` is the base class (parent).
 
-PortScanner and SubdomainScanner are child classes.
+- `PortScanner` and `SubdomainScanner` are child classes.
 
-They inherit attributes like target, results, and methods like report().
+They inherit attributes like `target`, `results`, and methods like `report()`.
 
 This makes your code more modular, reusable, and organized.
 
-🛠 Offensive Security Application
+---
+
+## 🛠 Offensive Security Application
 You can use inheritance to:
 
-Build toolchains (e.g., all tools inherit from ToolBase)
-
-Extend scanners (e.g., base scanner class → add DNS, port, vuln scanning)
-
-Reuse methods (e.g., logging, reporting, formatting output)
+- Build toolchains (e.g., all tools inherit from ToolBase)
+- Extend scanners (e.g., base scanner class → add DNS, port, vuln scanning)
+- Reuse methods (e.g., logging, reporting, formatting output)
 
 Inheritance helps you keep a single base logic and extend specific features cleanly.
 
-🔐 Connection to SOLID
+---
+
+## 🔐 Connection to SOLID
 This supports:
 
-✅ Open/Closed Principle: Classes are open for extension but closed for modification.
+- ✅ Open/Closed Principle: Classes are open for extension but closed for modification.
+    - You extend the base Scanner without touching its code.
 
-You extend the base Scanner without touching its code.
+---
 
-✅ Exercises / Next Steps
-🧪 Add a VulnerabilityScanner class that inherits from Scanner and simulates checking for CVEs.
+##✅ Exercises / Next Steps
+1. 🧪 Add a `VulnerabilityScanner` class that inherits from `Scanner` and simulates checking for CVEs.
 
-🧰 Add a run_all() method that takes a list of scanners and calls scan() + report() on each.
+2. 🧰 Add a `run_all()` method that takes a list of scanners and calls `scan()` + `report()` on each.
 
-🔗 Related Modules
-Previously: 03_encapsulation.md – we learned how to protect internal data.
+---
 
-Coming up: 05_polymorphism.md – we’ll learn how to call the same method name on different objects (like scan()), and each does something different!
+## 🔗 Related Modules
+- Previously: `03_encapsulation.md` – we learned how to protect internal data.
+
+- Coming up: `05_polymorphism.md` – we’ll learn how to call the same method name on different objects (like `scan()`), and each does something different!
