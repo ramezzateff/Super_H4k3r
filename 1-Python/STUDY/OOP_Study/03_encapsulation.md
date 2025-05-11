@@ -3,8 +3,7 @@
 
 ## 🔓 Real-World Cybersecurity Use Case
 
-You’re building a **password manager tool** for internal use during red teaming. You want to securely store passwords and avoid exposing them directly.  
-Encapsulation lets you protect sensitive data like credentials, hashes, and tokens inside classes.
+Imagine you're building a password cracking tool (Brute Force), and you store sensitive information like successful passwords or the number of failed attempts. Naturally, you don't want any part of the code to modify this data unless it follows strict rules.
 
 ---
 
@@ -63,7 +62,10 @@ Encapsulation is super useful when:
 - Tracking **found vulnerabilities** or **exploit chains** in memory
 - Building tools where only certain parts of data should be changed (e.g., shellcode buffers, credential storage)
 
-Encapsulation = safer tools with less unexpected behavior.
+### In offensive security:
+    - Password management tools often need to hide internal credentials but still allow access to them when necessary.
+    - Tools like Brute Force or Exploits can expose sensitive data like authentication tokens or API keys, so encapsulating how they're stored and accessed ensures safer operations.
+    - Encapsulation = safer tools with less unexpected behavior.
 
 ---
 
@@ -73,7 +75,7 @@ This supports:
 - ✅ **Single Responsibility Principle** (methods handle one thing)
 - ✅ **Open/Closed Principle** (you can extend the tool without breaking how passwords are stored)
 
-By **encapsulating the storage logic**, you reduce risk and keep your class clean and maintainable.
+By **encapsulating the storage logic**, you reduce risk and keep your class clean and maintainable, You can always extend the class to handle more complex operations (like encryption or expiry), without affecting the core logic of managing credentials.
 
 ---
 
@@ -82,6 +84,7 @@ By **encapsulating the storage logic**, you reduce risk and keep your class clea
 1. 🧪 Try to print or modify `__credentials` from outside the class. What happens?
 2. 🔐 Add a method that masks the password (e.g., returns `*****`).
 3. 🧰 Extend the class to support deleting passwords securely.
+4. 🛠 Try adding encryption to the password storage and adjusting the mask_password() function to show encrypted or decrypted values based on the password state.
 
 ---
 
