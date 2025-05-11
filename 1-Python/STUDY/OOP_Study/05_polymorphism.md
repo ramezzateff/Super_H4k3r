@@ -1,3 +1,4 @@
+
 # 05_polymorphism.md
 
 ## 🎯 Real-World Cybersecurity Use Case
@@ -48,41 +49,46 @@ if __name__ == "__main__":
 ---
 
 ## 📘 Concept Explanation
-What is Polymorphism?
-Polymorphism means many forms — different classes can define the same method (like run()), and you can call them in a generic way.
-    - Each brute-forcer tool implements its own `run()` method.
-    - But you can loop over all tools and just call `.run()` without caring which type they are.
 
-This leads to cleaner code, where you don’t have to write separate logic for each tool.
+### What is Polymorphism?
+
+Polymorphism means **many forms** — different classes can define the same method (like `run()`), and you can call them in a generic way.
+
+- Each brute-forcer tool implements its own `run()` method.
+- But you can loop over all tools and just call `.run()` without caring which type they are.
+
+This leads to cleaner, modular code with less duplication.
 
 ---
 
 ## 🛠 Offensive Security Application
-You’ll use polymorphism when building tools like:
-- Credential brute-forcers for multiple protocols
-- Payload generators with different formats (Base64, URL encode, Hex)
-- Output formatters (JSON, CSV, HTML)
 
-Instead of writing if tool_type == 'ssh':, just use .run() and let polymorphism do the rest.
+Polymorphism is powerful when you're building tools like:
+- Brute-force engines for SSH, FTP, HTTP, etc.
+- Payload encoders (Base64, URL, Hex, etc.)
+- Report generators (JSON, CSV, Text)
+
+It helps avoid repetitive `if` conditions and makes your tools flexible and extensible.
 
 ---
 
-##🔐 Connection to SOLID
+## 🔐 Connection to SOLID
 
-✅ Open/Closed Principle: You can add a new brute-forcer (e.g., RDP) by just adding a new class.
-No changes to existing logic.
+✅ **Open/Closed Principle**: You can add a new brute-forcer (like MySQL) by just adding a class without touching existing logic.
 
-✅ Liskov Substitution Principle: You can use any subclass in place of the parent (`BruteForcer`) without breaking the code.
+✅ **Liskov Substitution Principle**: You can use any subclass of `BruteForcer` in place of the base class, and the program will still work.
 
 ---
 
 ## ✅ Exercises / Next Steps
-1. Add a `MySQLBruteForcer` that inherits from `BruteForcer` and prints a fake login attempt.
-2. Modify `execute_brute_force()` to include a delay or log time taken by each tool.
-3. Create a generic `Reporter` class with polymorphic `output()` methods (for JSON, plaintext, etc.).
+
+1. 🧪 Add a `MySQLBruteForcer` that inherits from `BruteForcer` and prints a fake login attempt.
+2. ⏱ Modify `execute_brute_force()` to log the time taken by each brute-forcer.
+3. 🧾 Create a generic `Reporter` class and subclasses like `JSONReporter`, `TextReporter`, etc., that use `output()` polymorphically.
 
 ---
 
 ## 🔗 Related Modules
-- Previously: `04_inheritance.md` – we learned how classes can inherit base behaviors.
-- Coming up: `06_abstraction.md` – you'll learn how to define abstract blueprints for classes using Python’s `abc` module.
+
+- Previously: `04_inheritance.md` – we learned how classes can inherit behavior from other classes.
+- Coming up: `06_abstraction.md` – you'll learn how to enforce certain structure using abstract base classes.
