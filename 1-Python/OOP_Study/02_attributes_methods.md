@@ -2,14 +2,10 @@
 # 02_attributes_methods.md
 
 ## 🔓 Real-World Cybersecurity Use Case
-
-Imagine you're developing a **login brute-force tool**. You want to store each target's login page and a list of usernames/passwords. You'll also need methods to try credentials and store results.  
+Imagine you're developing a login brute-force tool. You want to store each target's login page and a list of usernames/passwords. You'll also need methods to try credentials and store results.
 Attributes represent the tool's settings; methods represent the tool's actions.
 
----
-
 ## 💻 Python Code First – Brute Force Tool Example
-
 ```python
 import requests
 
@@ -35,21 +31,50 @@ if __name__ == "__main__":
     bruteforcer.run(wordlist)
 ```
 
----
-
 ## 📘 Concept Explanation
 
+### 🔑 What is `__init__`?
+
+- `__init__` is a **special method** in Python classes.
+- It runs **automatically** when you create a new object from the class.
+- It's called the **constructor** because it “constructs” the object and sets up its initial attributes.
+
+Example:
+```python
+bruteforcer = LoginBruteForcer("http://example.com/login")
+```
+This line automatically triggers `__init__()` and assigns the URL to `self.target_url`.
+
+---
+
+### 🔁 What is `self`?
+
+- `self` refers to the **current object**.
+- It allows each object to keep **its own copy** of variables and methods.
+- Without `self`, all objects would share the same data.
+
+```python
+self.target_url = target_url
+```
+This means: "store the given `target_url` into this specific object’s `target_url`."
+
+---
+
 ### What Are Attributes?
-- Attributes are **variables attached to an object**.
-- They store information about the object’s current state.
+
+Attributes are variables attached to an object.
+They store information about the object’s current state.
 
 In our example:
 - `target_url` is an attribute that holds the login page URL.
 - `successful_logins` stores valid login combinations found.
 
+---
+
 ### What Are Methods?
-- Methods are **functions defined inside a class**.
-- They describe what the object can do.
+
+Methods are functions defined inside a class.
+They describe what the object can do.
 
 In our tool:
 - `try_login()` is a method that tries a username/password.
@@ -60,34 +85,37 @@ In our tool:
 ## 🛠 Offensive Security Application
 
 Attributes and methods are key when building:
+
 - Brute-force tools (store targets, handle attempts)
 - Port scanners (track open ports, define scan logic)
 - Exploit chains (track vulnerable targets, run steps)
 
-They help **organize logic cleanly**:
-- Attributes = tool configuration or state (IP, ports, credentials)
-- Methods = actions your tool performs (scan, send, fuzz, etc.)
+They help organize logic cleanly:
+
+- **Attributes** = tool configuration or state (IP, ports, credentials)
+- **Methods** = actions your tool performs (scan, send, fuzz, etc.)
 
 ---
 
 ## 🔐 Connection to SOLID
 
 This strengthens the **Single Responsibility Principle (SRP)**:
+
 > “Each method should have one job.”
 
 - `try_login()` only tries one login
 - `run()` handles the loop
 - `__init__` sets up the object
 
-Keeping logic **modular** helps you test and reuse code.
+Keeping logic modular helps you test and reuse code.
 
 ---
 
 ## ✅ Exercises / Next Steps
 
-1. ➕ Add an attribute to limit failed login attempts.
-2. 📊 Add a method to print a summary report of results.
-3. 🔐 Extend the tool to support a login form with custom field names (e.g., `user`, `pass`).
+➕ Add an attribute to limit failed login attempts.  
+📊 Add a method to print a summary report of results.  
+🔐 Extend the tool to support a login form with custom field names (e.g., user, pass).
 
 ---
 
