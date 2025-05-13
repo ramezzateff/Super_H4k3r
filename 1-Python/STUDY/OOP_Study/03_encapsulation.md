@@ -109,9 +109,40 @@ class PayloadManager:
 ---
 ## 🔧 Related Python Techniques
 - `__dict__`: Even private vars show here with mangled names (_ClassName__attr).
+```python
+class Person:
+    def __init__(self):
+        self.name = "Ramez"
+        self.__age = 20
+
+p = Person()
+print(p.__dict__) # Output : {'name': 'Ramez', '_Person__age': 20}
+# _Person__age > protected person with a private age is equal to 20
+
+```
 - getattr(obj, "name", default): Get attributes dynamically and safely.
+    You'll use it when you want to dynamically retrieve a variable's value from an object (you don't need to know its name in advance).
+If the variable doesn't exist, it returns the default value instead of throwing an error.
+```python
+class Car:
+    def __init__(self):
+        self.brand = "BMW"
+
+c = Car()
+print(getattr(c, "brand", "Unknown"))  # → BMW
+print(getattr(c, "model", "Unknown"))  # → Unknown (because the class didnot have a model attribute..)
+```
 - hasattr(obj, "attr"): Check if something exists before touching it.
+```python
+class Car:
+    def __init__(self):
+        self.brand = "BMW"
+
+if hasattr(c, "brand"):
+    print('Car have a brand.') 
+```
 - property: The Pythonic way to create safe, readable getters/setters.
+explain in `02_attributes_methods.md`
 
 ---
 
