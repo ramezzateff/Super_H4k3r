@@ -42,12 +42,12 @@ if __name__ == "__main__":
 ### What is a Class?
 - A **class** is a blueprint or template for creating objects.
 - Think of it like a **tool definition** — it tells Python what kind of **attributes** (data) and **method** (functions) the tool has.
-- Think of a class like the design of a hacking tool.
+- Think of a class like the blueprint of a hacking tool - it defines what the tool cacn do.
 
 
 ### What is an **Object/Instance**?
-- An **Object/Instance** is a copy based on the blass blueprint
-like that tool you can use.
+- An **Object/Instance** is a copy based on the class blueprint
+like that tool you can actually use, built from the class.
 - In our example
     `scanner = SubdomainScanner("example.com")`  
     here, `scanner` is and **object/instance** of the `SubdomainScanner` class.
@@ -58,11 +58,11 @@ Classes keep your code organized and reusable. Instead of writing separate funct
 
 ### What is the Difference Between a Class and an Object?
 
-| Class      | Object |
-|-----------|---------|
-| A design or templat | A live version built from that design|
-| Defines structure   | Has real data inside |
-| E.g., SubdomainScanner  | E.g., scanner = SubdomainScanner(...) |
+| Class                   | Object                               |
+|------------------------ |------------------------------------- |
+| A design or templat     | A live version built from that design|
+| Defines structure       | Has real data inside                 |
+| E.g., SubdomainScanner  | E.g., scanner = SubdomainScanner(...)|
 
 ---
 
@@ -79,7 +79,7 @@ scanner2 = scanner1  # scanner2 is an alias, both point to the same object
 ---
 
 ### 🔹 What is self in Python Classes?
-- self refers to the current object (like "this" in other languages), think of it, the self can be a bag can put any attribute inside of it and share its own attribute with any method in that class
+- self refers to the current object (like "this" in other languages), think of it, the self can be a bag where you can put any attribute inside of it and share its own attribute with any method in that class
 - It allows each object to keep **its own copy** of variables and methods.
 - Without `self`, all objects would share the same data.
 - You must include self as the first argument in every method inside a class:
@@ -91,7 +91,7 @@ def __init__(self, domain):  # self.domain refers to this object's data
 ---
 
 ### 🔹 What is the Special __init__ Method?
-- **__init__()** is **the constructor and special method** in Python classes.
+- `__init__()` is **the constructor and special method** in Python classes.
 - It runs **automatically** when you create a new object from the class.
 - It's called the **constructor** because it “constructs” the object and sets up its initial attributes.
 - can call any `method` inside it by calling `self.method()`
