@@ -108,7 +108,7 @@ class PayloadManager:
 
 ---
 ## 🔧 Related Python Techniques
-- **__dict__**: Even private vars show here with mangled names (_ClassName__attr).
+- `__dict__`: Even private vars show here with mangled names (_ClassName__attr).
 - getattr(obj, "name", default): Get attributes dynamically and safely.
 - hasattr(obj, "attr"): Check if something exists before touching it.
 - property: The Pythonic way to create safe, readable getters/setters.
