@@ -41,13 +41,75 @@ if __name__ == "__main__":
 
 ### What is a Class?
 - A **class** is a blueprint or template for creating objects.
-- Think of it like a **tool definition** — it tells Python what kind of data and functions (called methods) the tool has.
+- Think of it like a **tool definition** — it tells Python what kind of **attributes** (data) and **method** (functions) the tool has.
+- Think of a class like the design of a hacking tool.
 
-### What is an Object?
-- An **object** is a copy of that tool you can use.
-- In our example, `scanner = SubdomainScanner("example.com")` creates an actual instance of the scanner tool for a specific domain.
+
+### What is an **Object/Instance**?
+- An **Object/Instance** is a copy based on the blass blueprint
+like that tool you can use.
+- In our example
+    `scanner = SubdomainScanner("example.com")`  
+    here, `scanner` is and **object/instance** of the `SubdomainScanner` class.
 
 Classes keep your code organized and reusable. Instead of writing separate functions and variables everywhere, you group them inside a class.
+
+---
+
+### What is the Difference Between a Class and an Object?
+
+| Class      | Object |
+|-----------|---------|
+| A design or templat | A live version built from that design|
+| Defines structure   | Has real data inside |
+| E.g., SubdomainScanner  | E.g., scanner = SubdomainScanner(...) |
+
+---
+
+### 🔹 What is a Reference, Assignment, and Alias?
+#### When you assign one object to another variable, you're creating a reference:
+
+```python
+scanner1 = SubdomainScanner("example.com")
+scanner2 = scanner1  # scanner2 is an alias, both point to the same object
+
+```
+- Changing scanner2.domain would also change scanner1.domain, because they are both pointing to the same object in memory.
+
+---
+
+### 🔹 What is self in Python Classes?
+- self refers to the current object (like "this" in other languages), think of it, the self can be a bag can put any attribute inside of it and share its own attribute with any method in that class
+- It allows each object to keep **its own copy** of variables and methods.
+- Without `self`, all objects would share the same data.
+- You must include self as the first argument in every method inside a class:
+```python
+def __init__(self, domain):  # self.domain refers to this object's data
+
+```
+
+---
+
+### 🔹 What is the Special __init__ Method?
+- **__init__()** is **the constructor and special method** in Python classes.
+- It runs **automatically** when you create a new object from the class.
+- It's called the **constructor** because it “constructs” the object and sets up its initial attributes.
+- can call any `method` inside it by calling `self.method()`
+- You use it to set up initial attributes:
+```python
+def __init__(self, domain):
+    self.domain = domain # inital attribute
+    self.scan() # calling a method to run automatic when object = SubdomainScanner
+```
+
+---
+
+## 🔹 How Do Objects Represent Real-World Entities in Security Tools?
+Objects can represent:
+    - A target (TargetScanner(ip))
+    - A payload builder (PayloadBuilder(type='xss'))
+    - A brute-force session (LoginBruteForcer(url))
+- You map real-world hacking tasks to Python objects that are reusable and organized.
 
 ---
 
@@ -70,19 +132,27 @@ Why are classes important in hacking tools?
 This relates to the **Single Responsibility Principle (SRP)**:
 > A class should only have one reason to change.
 
-Here, `SubdomainScanner` has one job: scanning for subdomains. It doesn’t handle logging, file saving, or threading — these can be separate classes later.
+Here, `SubdomainScanner` has one job: scanning for subdomains.
+It doesn’t handle logging, file saving, or threading — these can be separate classes later.
 
 ---
 
-## ✅ Exercises / Next Steps
+## 🧠 Checkpoints: Key Takeaways
+✅ A class defines what an object is and does.
+✅ An object is a working version of a class.
+✅ __init__() sets up the object when it's created.
+✅ self refers to the object itself — always use it in methods.
+✅ Objects help map real security tasks to reusable code.
 
-1. 🔧 Modify the class to also save the results to a file (`results.txt`).
-2. 🔀 Extend it to accept a `https` option and test both `http` and `https` schemes.
+## 🧪  Exercises / Next Steps
+
+1. 🔧 Add a method to SubdomainScanner that saves results to a file.
+2. 🌐 Modify the scan() method to check both http and https schemes.
+3. 🔁 Create a second scanner object and run it on a different domain — reuse the class.
 
 ---
 
 ## 🔗 Related Modules
 
-- This sets the foundation for:  
-  - `02_attributes_methods.md` – which explains how to customize what your objects can do.  
-  - `03_encapsulation.md` – where we’ll protect internal logic like the found subdomains list.
+`00_python_why_oop.md` – Why Python and OOP are great for hackers.
+`02_attributes_methods.md` – Learn how objects store data and run logic (attributes + methods).
