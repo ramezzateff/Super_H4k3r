@@ -48,17 +48,6 @@ class HostScanner:
     def ping(self): ...
     def scan_ports(self): ...
 ```
-
----
-
-## 🔄 Class vs Object (and Instance)
-
-| Term      | Meaning |
-|-----------|---------|
-| Class     | Blueprint for creating tools/objects |
-| Object    | Instance of a class (e.g., scanner = HostScanner("192.168.1.1")) |
-| Instance  | Another word for an object (same meaning) |
-
 ---
 
 ## 📊 Why Use OOP in Hacking Scripts?
@@ -113,7 +102,7 @@ scanner.scan()
 
 ## 📎 Real Python Tools Using OOP
 
-- [sqlmap](https://github.com/sqlmapproject/sqlmap) – SQLi automation
+- [sqlmap](https://github.com/sqlmapproject/sqlmap) – SQLi automation - (inheritance)
 - [Recon-ng](https://github.com/lanmaster53/recon-ng) – Recon framework
 - [XSStrike](https://github.com/s0md3v/XSStrike) – XSS scanner
 - [NmapPy](https://pypi.org/project/python-nmap/) – Python wrapper for Nmap
