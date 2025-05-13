@@ -138,11 +138,11 @@ It doesn’t handle logging, file saving, or threading — these can be separate
 ---
 
 ## 🧠 Checkpoints: Key Takeaways
-✅ A class defines what an object is and does.
-✅ An object is a working version of a class.
-✅ __init__() sets up the object when it's created.
-✅ self refers to the object itself — always use it in methods.
-✅ Objects help map real security tasks to reusable code.
+- ✅ A class defines what an object is and does.
+- ✅ An object is a working version of a class.
+- ✅ __init__() sets up the object when it's created.
+- ✅ self refers to the object itself — always use it in methods.
+- ✅ Objects help map real security tasks to reusable code.
 
 ## 🧪  Exercises / Next Steps
 
