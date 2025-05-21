@@ -11,18 +11,18 @@ Welcome to Day 1 of our networking and Python scripting journey! This day focuse
 
 ---
 
-| Day 1                        | Python Tools/Libraries     | Concepts Learned                                 |
-| ---------------------------- | -------------------------- | ------------------------------------------------ |
-| 1. String format Validate IP | `ipaddress`, `re`          | IP formats                                       |
-| 2. IP to Binary              | `split`, `format`, `bin`   | Bitwise understanding<br>String formatting       |
-| 3. Extract IPs               | `re`, `file handling`      | Pattern matching<br>Regex + File parsing         |
-| 4. Private IP Check          | `ipaddress`                | IP ranges                                        |
-| 5. Network/Broadcast         | `ipaddress.ip_network()`   | Subnetting<br>Network calculation                |
-| 6. All IPs in Subnet         | `.hosts()`                 | IP iteration<br>Subnetting ranges                |
-| 7. Ping IP                   | `subprocess`               | Network reachability<br>System command execution |
-| 8. IPv6 Compress/Expand      | `.compressed`, `.exploded` | IPv6 structure                                   |
-| 9. IP Class                  | `int`, `if` statements     | IP classification                                |
-| 10. Same Subnet              | `ip_network`, comparisons  | Network comparison<br>Binary subnet masking      |
+| Day 1                         | Python Tools/Libraries     | Concepts Learned                                 |
+| ----------------------------- | -------------------------- | ------------------------------------------------ |
+| 01. String format Validate IP | `ipaddress`, `re`          | IP formats                                       |
+| 02. IP to Binary              | `split`, `format`, `bin`   | Bitwise understanding<br>String formatting       |
+| 03. Extract IPs               | `re`, `file handling`      | Pattern matching<br>Regex + File parsing         |
+| 04. Private IP Check          | `ipaddress`                | IP ranges                                        |
+| 05. Network/Broadcast         | `ipaddress.ip_network()`   | Subnetting<br>Network calculation                |
+| 06. All IPs in Subnet         | `.hosts()`                 | IP iteration<br>Subnetting ranges                |
+| 07. Ping IP                   | `subprocess`               | Network reachability<br>System command execution |
+| 08. IPv6 Compress/Expand      | `.compressed`, `.exploded` | IPv6 structure                                   |
+| 09. IP Class                  | `int`, `if` statements     | IP classification                                |
+| 10. Same Subnet               | `ip_network`, comparisons  | Network comparison<br>Binary subnet masking      |
 
 ## 🔹 Exercises
 
