@@ -2,41 +2,80 @@
 
 Welcome to Day 1 of our networking and Python scripting journey! This day focuses on understanding IP addresses, subnetting, and the basics of networking protocols.
 
-## Topics Covered
+---
+
+## 📘 Topics Covered
 - IP Basics (IPv4 & IPv6)
 - Subnetting & CIDR Notation
 - Network Calculations
 
+---
+
+| Day 1                        | Python Tools/Libraries     | Concepts Learned                                 |
+| ---------------------------- | -------------------------- | ------------------------------------------------ |
+| 1. String format Validate IP | `ipaddress`, `re`          | IP formats                                       |
+| 2. IP to Binary              | `split`, `format`, `bin`   | Bitwise understanding<br>String formatting       |
+| 3. Extract IPs               | `re`, `file handling`      | Pattern matching<br>Regex + File parsing         |
+| 4. Private IP Check          | `ipaddress`                | IP ranges                                        |
+| 5. Network/Broadcast         | `ipaddress.ip_network()`   | Subnetting<br>Network calculation                |
+| 6. All IPs in Subnet         | `.hosts()`                 | IP iteration<br>Subnetting ranges                |
+| 7. Ping IP                   | `subprocess`               | Network reachability<br>System command execution |
+| 8. IPv6 Compress/Expand      | `.compressed`, `.exploded` | IPv6 structure                                   |
+| 9. IP Class                  | `int`, `if` statements     | IP classification                                |
+| 10. Same Subnet              | `ip_network`, comparisons  | Network comparison<br>Binary subnet masking      |
+
 ## 🔹 Exercises
 
-1. Write a Python script that validates whether a given IP address is IPv4 or IPv6.
-   - **File Name:** `0_validate_ip.py`
+Each task is paired with its own dedicated Python file to help keep everything organized.
 
-2. Convert an IPv4 address from dotted-decimal to binary format.
-   - **File Name:** `1_ipv4_to_binary.py`
+✅ 1. Validate IP Address Format:
+- Description: Write a script that checks whether a given IP address is in IPv4 or IPv6 format.
+- File: `0_validate_ip.py`
 
-3. Extract all IP addresses from a text file.
-   - **File Name:** `2_extract_ips.py`
+✅ 2. IPv4 to Binary:
+- Description: Convert an IPv4 address from dotted-decimal to binary.
+- File: `1_ipv4_to_binary.py`
 
-4. Write a function that checks if an IP belongs to a private network (192.168.x.x, 10.x.x.x, etc.).
-   - **File Name:** `3_check_private_ip.py`
+✅ 3. Extract IPs from File:
+- Description: Scan a text file and extract all IP addresses found.
+- File: `2_extract_ips.py`
 
-5. Given an IP and subnet mask, calculate the network address and broadcast address.
-   - **File Name:** `4_network_and_broadcast.py`
+✅ 4. Check Private IP:
+- Description: Write a function to check if an IP belongs to a private network (e.g., 192.168.x.x, 10.x.x.x).
+- File: `3_check_private_ip.py`
 
-6. Generate a list of all possible IPs in a given subnet (192.168.1.0/24).
-   - **File Name:** `5_generate_ips.py`
+✅ 5. Network & Broadcast Address:
+- Description: Given an IP and subnet mask, calculate the network and broadcast addresses.
+- File: `4_network_and_broadcast.py`
 
-7. Create a script that checks if an IP is reachable by pinging it.
-   - **File Name:** `6_ping_ip.py`
+✅ 6. Generate Subnet IPs:
+- Description: Generate all possible IPs within a subnet like 192.168.1.0/24.
+- File: `5_generate_ips.py`
 
-8. Convert an IPv6 address to its compressed and expanded forms.
-   - **File Name:** `7_ipv6_conversion.py`
+✅ 7. Ping an IP Address:
+- Description: Script to ping an IP and check its availability.
+- File: `6_ping_ip.py`
 
-9. Write a function that determines the class of an IPv4 address (A, B, C, D, E).
-   - **File Name:** `8_ipv4_class.py`
+✅ 8. IPv6 Conversion:
+- Description: Convert an IPv6 address into its compressed and expanded forms.
+- File: `7_ipv6_conversion.py`
 
-10. Given two IPs, determine if they belong to the same subnet.
-   - **File Name:** `9_same_subnet.py`
+✅ 9. Determine IPv4 Class:
+-Description: Function that returns the class (A, B, C, D, E) of a given IPv4 address.
+- File: `8_ipv4_class.py`
 
-Happy Networking! 🌐
+✅ 10. Check Same Subnet:
+Description: Given two IPs, determine whether they belong to the same subnet.
+- File: `9_same_subnet.py`
+
+---
+
+## 🛠️ How to Run a Script
+
+> python3 0_validate_ip.py
+
+Replace the filename accordingly for each task.
+
+---
+
+🤖 Happy Networking! 🌐
