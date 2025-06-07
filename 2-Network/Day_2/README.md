@@ -1,11 +1,12 @@
 # 🔐 Day 2: Ports & Protocols
 
-Welcome to Day 2 of your Python + Networking learning track!  
-Today, you'll dive deep into how ports work, the difference between TCP and UDP, and how they are used in scanning and enumeration tasks.
+Welcome to **Day 2** of your Python + Networking learning track!  
+Today, you'll explore how ports work, the difference between **TCP** and **UDP**, and how they're used in scanning and enumeration.
 
 ---
 
 ## 📘 Topics Covered
+
 - Port Numbers (0–65535)
 - Privileged vs. Unprivileged Ports
 - Well-Known Port Services
@@ -16,49 +17,36 @@ Today, you'll dive deep into how ports work, the difference between TCP and UDP,
 
 ## 🔹 Exercises
 
-| #  | Task Description |
-|----|------------------|
+| #   | Task Description                                                                 | File                        |
+|-----|----------------------------------------------------------------------------------|-----------------------------|
 | 1️⃣ | **List Common Ports & Services**  
-Print a list of commonly used ports (e.g., 80 → HTTP, 443 → HTTPS).  
-**File:** `0_common_ports.py` |
+      Print commonly used ports (e.g., 80 → HTTP, 443 → HTTPS).                         | `0_common_ports.py`         |
 | 2️⃣ | **Validate Port Number**  
-Write a function to check if a port number is valid (0–65535).  
-**File:** `1_validate_port.py` |
+      Function to check if port is valid (0–65535).                                      | `1_validate_port.py`        |
 | 3️⃣ | **Scan First 1000 Ports**  
-Create a script to scan ports 1–1000 on a target IP and report open ones.  
-**File:** `2_scan_top_ports.py` |
+      Scan ports 1–1000 on a target IP and report open ones.                             | `2_scan_top_ports.py`       |
 | 4️⃣ | **TCP or UDP Detector**  
-Given a port number, check if it’s typically used by TCP or UDP.  
-**File:** `3_tcp_udp_check.py` |
+      Check if a port is typically TCP or UDP.                                           | `3_tcp_udp_check.py`        |
 | 5️⃣ | **Random Open Ports Generator**  
-Randomly generate and print 5 open port numbers from the unprivileged range (1024–65535).  
-**File:** `4_generate_ports.py` |
+      Generate 5 random unprivileged ports (1024–65535).                                 | `4_generate_ports.py`       |
 | 6️⃣ | **Privileged Port Checker**  
-Determine whether a given port is in the privileged range (0–1023).  
-**File:** `5_check_privileged_port.py` |
+      Check if a port is in the privileged range (0–1023).                               | `5_check_privileged_port.py`|
 | 7️⃣ | **List Listening Ports (Localhost)**  
-List all currently listening ports on `127.0.0.1` (use `socket` or `psutil`).  
-**File:** `6_list_local_ports.py` |
+      List listening ports on `127.0.0.1` using `socket` or `psutil`.                   | `6_list_local_ports.py`     |
 | 8️⃣ | **Basic TCP Port Scanner**  
-Use Python’s `socket` module to implement a basic TCP port scanner.  
-**File:** `7_tcp_port_scanner.py` |
+      Use `socket` to build a basic TCP port scanner.                                    | `7_tcp_port_scanner.py`     |
 | 9️⃣ | **Basic UDP Port Scanner**  
-Simulate a basic UDP scanner (send UDP packets, check responses or ICMP).  
-**File:** `8_udp_port_scanner.py` |
+      Simulate a UDP scan (send packets, check responses or ICMP).                       | `8_udp_port_scanner.py`     |
 | 🔟 | **Reserved Ports in Hacking**  
-List all commonly used reserved ports (1–1023) in hacking tools (e.g., 21 for FTP, 22 for SSH).  
-**File:** `9_reserved_ports_list.py` |
+      List reserved ports (1–1023) used in hacking tools (e.g., 21 FTP, 22 SSH).         | `9_reserved_ports_list.py`  |
 
 ---
 
 ## 🛠 Tools You Might Use
 
-- `socket` (for TCP/UDP connections)
-- `random` (for generating port numbers)
-- `psutil` or `subprocess` (for listing open ports)
-- Basic Linux tools (`netstat`, `ss`) for testing and comparison
+- `socket` (for TCP/UDP communication)
+- `random` (generate random ports)
+- `psutil` or `subprocess` (list open ports)
+- Linux commands: `netstat`, `ss` (to cross-check output)
 
----
-
-## 📁 Folder Structure Suggestion
 
