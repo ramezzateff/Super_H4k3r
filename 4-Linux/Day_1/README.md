@@ -24,16 +24,16 @@ This project includes a set of small, focused Bash scripts that help you collect
 
 | #   | Task Description                                               | File Name                  |
 |-----|----------------------------------------------------------------|----------------------------|
-| 1️⃣ | Display Linux distribution name and version                    | `1_distro_info.sh`         |
-| 2️⃣ | Print current username and its user ID (UID)                  | `2_user_uid.sh`            |
-| 3️⃣ | Show system's hostname and local IP address                   | `3_hostname_ip.sh`         |
-| 4️⃣ | List all environment variables                                | `4_env_vars.sh`            |
-| 5️⃣ | Check if the system is running Linux                          | `5_check_linux.sh`         |
-| 6️⃣ | Display system uptime in a readable format                    | `6_uptime.sh`              |
-| 7️⃣ | Show CPU model and count number of cores                      | `7_cpu_info.sh`            |
-| 8️⃣ | Display total and available RAM (human-readable)              | `8_ram_info.sh`            |
-| 9️⃣ | Determine whether the system is 32-bit or 64-bit              | `9_architecture.sh`        |
-| 🔟  | Live CPU & Memory usage monitor (real-time)                   | `10_live_monitor.sh`       |
+| 1️⃣ | Display Linux distribution name and version                    | `0_distro_info.sh`         |
+| 2️⃣ | Print current username and its user ID (UID)                  | `1_user_uid.sh`            |
+| 3️⃣ | Show system's hostname and local IP address                   | `2_hostname_ip.sh`         |
+| 4️⃣ | List all environment variables                                | `3_env_vars.sh`            |
+| 5️⃣ | Check if the system is running Linux                          | `4_check_linux.sh`         |
+| 6️⃣ | Display system uptime in a readable format                    | `5_uptime.sh`              |
+| 7️⃣ | Show CPU model and count number of cores                      | `6_cpu_info.sh`            |
+| 8️⃣ | Display total and available RAM (human-readable)              | `7_ram_info.sh`            |
+| 9️⃣ | Determine whether the system is 32-bit or 64-bit              | `8_architecture.sh`        |
+| 🔟  | Live CPU & Memory usage monitor (real-time)                   | `9_live_monitor.sh`       |
 
 ---
 
